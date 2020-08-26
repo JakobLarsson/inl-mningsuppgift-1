@@ -24,11 +24,11 @@ namespace Inlamningsuppgift_1
             Console.WriteLine("Enter third term");
             int term3 = Convert.ToInt32(Console.ReadLine());
 
-            // räknar ut första två termerna med addition får välja if sats sedan
+            
             int sum1 = (multiplikation(term1, term2, opperator1));
             Console.WriteLine(sum1);
-            
 
+            int random = 0;
             int sum2 = multiplikation(sum1, term3, opperator2);
             Console.WriteLine(sum2);
             Console.ReadLine();
