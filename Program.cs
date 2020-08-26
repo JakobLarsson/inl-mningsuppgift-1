@@ -6,7 +6,6 @@ namespace Inlamningsuppgift_1
     {
         static void Main(string[] args)
         {
-
             
             //väljer opperatorer och termer
             Console.WriteLine("Enter first opperator: ");
@@ -23,39 +22,87 @@ namespace Inlamningsuppgift_1
 
             Console.WriteLine("Enter third term");
             int term3 = Convert.ToInt32(Console.ReadLine());
+            int answear1 = 0;
+            int answear2 = 0;
 
+            if (opperator1 == "*") { 
+                int summ1 = (multiplikation(term1, term2));
+                Console.WriteLine();
+                answear1 = summ1;
+            }
+            if (opperator1 == "+")
+            {
+                int summ1 = (addition(term1, term2));
+                Console.WriteLine();
+                answear1 = summ1;
+            }
+            if (opperator1 == "-")
+            {
+                int summ1 = (subtraktion(term1, term2));
+                Console.WriteLine();
+                answear1 = summ1;
+            }
+            if (opperator1 == "/")
+            {
+                int summ1 = (division(term1, term2));
+                Console.WriteLine();
+                answear1 = summ1;
+            }
+            //opperator2 ska tilldelas till uträkningen samt term 3
             
-            int sum1 = (multiplikation(term1, term2, opperator1));
-            Console.WriteLine(sum1);
+            if (opperator2 == "*")
+            {
+                int summ2 = multiplikation(answear1, term3);
+                answear2 = summ2;
+            }
+            if (opperator2 == "+")
+            {
+                int summ2 = addition(answear1, term3);
+                answear2 = summ2;
+            }
+            if (opperator2 == "-")
+            {
+                int summ2 = subtraktion(answear1, term3);
+                answear2 = summ2;
+            }
+            if (opperator2 == "/")
+            {
+                int summ2 = division(answear1, term3);
+                answear2 = summ2;
+            }
 
-            int random = 0;
-            int sum2 = multiplikation(sum1, term3, opperator2);
-            Console.WriteLine(sum2);
+
+            Console.WriteLine(answear1);
+            Console.WriteLine(answear2);
             Console.ReadLine();
 
+            
+            
+            
+
         }
-        static int addition(int nr1, int nr2, string opperator)
+        static int addition(int nr1, int nr2)
         {
             int result;
             result = nr1 + nr2;
             return result;
         }
 
-        static int subtraktion(int nr1, int nr2, string opperator)
+        static int subtraktion(int nr1, int nr2)
         {
             int result;
             result = nr1 - nr2;
             return result;
         }
 
-        static int multiplikation(int nr1, int nr2, string opperator)
+        static int multiplikation(int nr1, int nr2)
         {
             int result;
             result = nr1 * nr2;
             return result;
         }
 
-        static int division(int nr1, int nr2, string opperator)
+        static int division(int nr1, int nr2)
         {
             int result;
             result = nr1 / nr2;
