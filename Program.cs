@@ -73,10 +73,11 @@ namespace Inlamningsuppgift_1
                 int summ2 = division(answear1, term3);
                 answear2 = summ2;
             }
+            
 
 
             Console.WriteLine(answear1);
-            Console.WriteLine("slutsvar: ", answear2);
+            Console.WriteLine(answear2);
             Console.ReadLine();
 
             
