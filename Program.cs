@@ -26,63 +26,21 @@ namespace Inlamningsuppgift_1
             int answear1 = 0;
             int answear2 = 0;
 
+
             //opperator 1 ska tilldelas i uträkningen samt term1 och term2
+  
 
-            if (opperator1 == "*") { 
-                int summ1 = (multiplikation(term1, term2));
-                Console.WriteLine();
-                answear1 = summ1;
-            }
-            if (opperator1 == "+")
-            {
-                int summ1 = (addition(term1, term2));
-                Console.WriteLine();
-                answear1 = summ1;
-            }
-            if (opperator1 == "-")
-            {
-                int summ1 = (subtraktion(term1, term2));
-                Console.WriteLine();
-                answear1 = summ1;
-            }
-            if (opperator1 == "/")
-            {
-                int summ1 = (division(term1, term2));
-                Console.WriteLine();
-                answear1 = summ1;
-            }
-            //opperator2 ska tilldelas till uträkningen samt term 3
+            int step1 = CheckOpperator(term1, term2, opperator1);
             
-            if (opperator2 == "*")
-            {
-                int summ2 = multiplikation(answear1, term3);
-                answear2 = summ2;
-            }
-            if (opperator2 == "+")
-            {
-                int summ2 = addition(answear1, term3);
-                answear2 = summ2;
-            }
-            if (opperator2 == "-")
-            {
-                int summ2 = subtraktion(answear1, term3);
-                answear2 = summ2;
-            }
-            if (opperator2 == "/")
-            {
-                int summ2 = division(answear1, term3);
-                answear2 = summ2;
-            }
+            //opperator 2 ska tilldelas i uträkningen samt svaret ifrån första steget tillsamans med sista termen
             
+            int step2 = CheckOpperator(step1, term3, opperator2);
+          
 
 
-            Console.WriteLine(answear1);
-            Console.WriteLine(answear2);
+            Console.WriteLine("The answear is: " + step2);
+  
             Console.ReadLine();
-
-            
-            
-            
 
         }
         static int addition(int nr1, int nr2)
@@ -111,6 +69,36 @@ namespace Inlamningsuppgift_1
             int result;
             result = nr1 / nr2;
             return result;
+        }
+
+        static int CheckOpperator(int term1, int term2, string opperator)
+        {
+            int answear = 0;
+            if (opperator == "*")
+            {
+                int summ1 = (multiplikation(term1, term2));
+                
+                answear = summ1;
+            }
+            if (opperator == "+")
+            {
+                int summ1 = (addition(term1, term2));
+                
+                answear = summ1;
+            }
+            if (opperator == "-")
+            {
+                int summ1 = (subtraktion(term1, term2));
+                
+                answear = summ1;
+            }
+            if (opperator == "/")
+            {
+                int summ1 = (division(term1, term2));
+                
+                answear = summ1;
+            }
+            return answear;
         }
 
     }   
