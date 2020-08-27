@@ -6,7 +6,8 @@ namespace Inlamningsuppgift_1
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Hello, choose two opperators and three terms and i will count aout end result for you");
+            Console.WriteLine("Valid opperators: +  -  *  /");
             //väljer opperatorer och termer
             Console.WriteLine("Enter first opperator: ");
             string opperator1 = Console.ReadLine();
@@ -24,6 +25,8 @@ namespace Inlamningsuppgift_1
             int term3 = Convert.ToInt32(Console.ReadLine());
             int answear1 = 0;
             int answear2 = 0;
+
+            //opperator 1 ska tilldelas i uträkningen samt term1 och term2
 
             if (opperator1 == "*") { 
                 int summ1 = (multiplikation(term1, term2));
@@ -73,7 +76,7 @@ namespace Inlamningsuppgift_1
 
 
             Console.WriteLine(answear1);
-            Console.WriteLine(answear2);
+            Console.WriteLine("slutsvar: ", answear2);
             Console.ReadLine();
 
             
