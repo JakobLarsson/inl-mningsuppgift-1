@@ -26,23 +26,45 @@ namespace Inlamningsuppgift_1
             int answear1 = 0;
             int answear2 = 0;
 
+            int step1 = 0;
+            int step2;
+            
+            //switch för att prioritera * och / först i uträkningen  sedan uträkning utefter prioritering med hjälp av CheckOpperator
 
-            //opperator 1 ska tilldelas i uträkningen samt term1 och term2
-  
+            switch (opperator2)
+            {
+                
+                case "*":
+                    step1 = CheckOpperator(term2, term3, opperator2);
+                    step2 = CheckOpperator(step1, term1, opperator1);
+                    break;
+                case "/":
+                    step1 = CheckOpperator(term2, term3, opperator2);
+                    step2 = CheckOpperator(step1, term1, opperator1);
+                    break;
+                default:
+                    step1 = CheckOpperator(term1, term2, opperator1);
+                    step2 = CheckOpperator(step1, term3, opperator2);
+                    break;
+        
+            }
+            
 
-            int step1 = CheckOpperator(term1, term2, opperator1);
+            
             
             //opperator 2 ska tilldelas i uträkningen samt svaret ifrån första steget tillsamans med sista termen
             
-            int step2 = CheckOpperator(step1, term3, opperator2);
+            
           
+            //skriv ut svaret
 
-
-            Console.WriteLine("The answear is: " + step2);
+            Console.WriteLine(term1 + " " + opperator1 + " " + term2 + " " + opperator2 + " " + term3 + " " + step2);
   
             Console.ReadLine();
 
         }
+       
+        //metoder för att göra uträkningar med dom olika opperatorerna
         static int addition(int nr1, int nr2)
         {
             int result;
@@ -70,6 +92,9 @@ namespace Inlamningsuppgift_1
             result = nr1 / nr2;
             return result;
         }
+
+        /* CheckOpperator metod för att stega igenom vilken opperator användaren 
+         * har valt samt genomföra uträkningen genom att kalla på räkne metoden*/
 
         static int CheckOpperator(int term1, int term2, string opperator)
         {
