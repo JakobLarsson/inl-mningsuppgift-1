@@ -96,7 +96,7 @@ namespace Inlamningsuppgift_1
           
             //skriv ut svaret
 
-            Console.WriteLine(term1 + " " + opperator1 + " " + term2 + " " + opperator2 + " " + term3 + " " + step2);
+            Console.WriteLine(term1 + " " + opperator1 + " " + term2 + " " + opperator2 + " " + term3 + " = " + step2);
   
             Console.ReadLine();
 
